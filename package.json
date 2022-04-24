@@ -5,14 +5,20 @@
   "main": "backend/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node backend/server.js",
-    "dev":"nodemon"
+    "start": "node backend/server.js",
+    "dev": "nodemon"
   },
   "author": "Lokesh khandelwal",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "mongoose": "^6.2.10"
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.10",
+    "nodemailer": "^6.7.3",
+    "validator": "^13.7.0"
   }
 }
