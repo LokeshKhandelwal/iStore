@@ -21,7 +21,7 @@ const server = app.listen(process.env.PORT,()=>{
     console.log(`Server is Working on http://localhost:${process.env.PORT}`)
 })
 
-
+//  console.log(YOJoginder)
 //Unhandled Promise rejection--if dabase is wrong (try catch)
 process.on("unhandledRejection",err=>{
     console.log(`Error: ${err.message}`)

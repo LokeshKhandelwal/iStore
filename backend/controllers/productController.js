@@ -4,10 +4,13 @@ const catchAsyncError = require("../middleware/catchAsyncError");
 const ApiFeatures = require("../utils/apiFeatures");
 // const ErrorHandler = require("../utils/errorHandler");
 //because apna bhaut sari request hain to ek async ka error handler bnalenge try catch ki jgah (ex: Agar kisine name of product nhi diya toh)
- 
+
 //Read - get we use cotroller to minimize some extra line of same code in Routes
 exports.getAllProducts = catchAsyncError(async (req, res) => {
-    const apiFeature = new ApiFeatures(Product.find(),req.query).search();  
+    const resultPerPage = 4;
+    const productCount = await Product.countDocuments();
+
+    const apiFeature = new ApiFeatures(Product.find(), req.query).search().filter().pagination(resultPerPage);
     const products = await apiFeature.query;
     res.status(200).json({
         success: true,
@@ -68,5 +71,6 @@ exports.getProductDetails = catchAsyncError(async (req, res, next) => {
     res.status(200).json({
         success: true,
         product,
+        productCount,
     });
 });
