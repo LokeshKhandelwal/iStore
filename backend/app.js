@@ -1,10 +1,13 @@
-const express = require('express')
-const app = express()
+const express = require("express");
+const app = express();
+const cookieParser = require("cookie-parser");      
 
 const errorMiddleware = require("./middleware/error") 
 
 app.use(express.json());//basic enviorment 
-// app.get('/', (req, res) => {res.send('hello world') })[To remove this we use routes(import)]
+app.use(cookieParser());
+
+//Route Imports
 const product = require('./routes/productRoute');
 const user = require('./routes/userRoute');
 

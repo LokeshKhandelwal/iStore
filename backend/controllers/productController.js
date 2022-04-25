@@ -20,6 +20,9 @@ exports.getAllProducts = catchAsyncError(async (req, res) => {
 
 //Create-post{Export sath sath kar rhe hain}                                           ---------Admin
 exports.createProduct = catchAsyncError(async (req, res, next) => {
+
+    req.body.user = req.user.id;
+
     const products = await Product.create(req.body);
     res.status(201).json({
         success: true,
