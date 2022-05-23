@@ -2,7 +2,7 @@ const Product = require("../models/productModel");
 const ErrorHandler = require("../utils/errorHandler");
 const catchAsyncError = require("../middleware/catchAsyncError");
 const ApiFeatures = require("../utils/apiFeatures");
-const { is } = require("express/lib/request");
+// const { is } = require("express/lib/request");
 // const ErrorHandler = require("../utils/errorHandler");
 //because apna bhaut sari request hain to ek async ka error handler bnalenge try catch ki jgah (ex: Agar kisine name of product nhi diya toh)
 
